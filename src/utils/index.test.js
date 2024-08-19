@@ -19,3 +19,8 @@ test('numbers separated by newlines or commas', () => {
 test('custom delimiter', () => {
   expect(add('//;\n1\n4;5')).toBe(10);
 });
+
+test('throws error for negative and invalid numbers', () => {
+  expect(()=> add('//;\n-1\n4;5')).toThrow(new Error('Negative numbers not allowed -1'));
+  expect(()=> add('//;\na\n4;5')).toThrow(new Error('Invalid number a'));
+});

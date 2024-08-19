@@ -1,5 +1,5 @@
 export function add(input) {
-  if(input?.trim()===''){
+  if(!input){
     return 0;
   }
   if(!isNaN(input)){
@@ -10,5 +10,12 @@ export function add(input) {
     input?.splice(0,4)?.slice(2,3)
   : [',']
   )[0];
-  return input?.join('')?.replaceAll('\n', delim)?.split(delim)?.reduce((total, num)=> total + +num, 0);
+
+  return input?.join('')?.replaceAll('\n', delim)?.split(delim)?.reduce((total, num)=> {
+    if(isNaN(+num))
+      throw new Error(`Invalid number ${num}`);
+    if(Math.sign(+num)<0)
+      throw new Error(`Negative numbers not allowed ${num}`);    
+    return total + +num;
+  }, 0);
 }
