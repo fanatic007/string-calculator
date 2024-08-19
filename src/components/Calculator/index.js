@@ -1,3 +1,4 @@
+import './index.css';
 import {useState, useRef} from 'react';
 import {add} from '../../utils';
 
@@ -21,12 +22,14 @@ const Calculator = () => {
   return (
     <>
       <div>
-        <input ref={inputRef} type="text"/>
+        <textarea ref={inputRef} type="text"></textarea>
+      </div>
+      <div>
         <button onClick={calculate}>Calculate</button>
       </div>
       <div>
         <p>Result : {result}</p>
-        {error && <p>Error: {error}</p>}
+        {error && <p className='error'>Error: {error}</p>}
       </div>
     </>
   );

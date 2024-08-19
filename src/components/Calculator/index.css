@@ -1,0 +1,23 @@
+.error{
+  color: red;
+}
+
+textarea, button, div {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+p{
+  text-align: center;
+}
+
+h2{
+  color: purple;
+}
+button {
+  background-color: purple;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
