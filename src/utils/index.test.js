@@ -15,3 +15,7 @@ test('multiple numbers separated by commas', () => {
 test('numbers separated by newlines or commas', () => {
   expect(add('1\n4,5')).toBe(10);
 });
+
+test('custom delimiter', () => {
+  expect(add('//;\n1\n4;5')).toBe(10);
+});
