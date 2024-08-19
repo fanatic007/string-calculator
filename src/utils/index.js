@@ -2,7 +2,7 @@ export function add(input) {
   if(!input){
     return 0;
   }
-  if(!isNaN(input)){
+  if(!isNaN(+input) && +input>0){
     return +input; 
   }
   input = input.split('');
