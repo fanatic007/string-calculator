@@ -14,7 +14,7 @@ const Calculator = () => {
     }
     catch(e){
       setResult(0);
-      setError(e);
+      setError(e.message);
     }
   };
 
