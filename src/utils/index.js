@@ -5,4 +5,5 @@ export function add(input) {
   if(!isNaN(input)){
     return +input; 
   }
+  return input?.split(',')?.reduce((total, num)=> total + +num, 0);
 }
